@@ -1,0 +1,375 @@
+body {
+  font-family: "Poppins", "Helvetica", sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.resources-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+    padding-bottom: 0;
+    width: 80%;
+    gap: 2.5rem;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+
+    .disclaimer {
+      font-style: italic;
+      font-size: 1.3rem;
+      width: 70%;
+      font-weight: 200;
+    }
+  }
+
+  .contact-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      width: 100%;
+      text-align: left;
+    }
+
+    .about-us {
+      font-weight: 200;
+      font-size: 1rem;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+      gap: 4rem;
+      padding: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 100%;
+
+      .phone-number:hover,
+      .email:hover,
+      .address:hover,
+      .website:hover {
+        background-color: black;
+        color: white;
+      }
+
+      .phone-number,
+      .email,
+      .address,
+      .website {
+        border: 0.1rem solid black;
+        border-radius: 2rem;
+        padding: 2rem 1rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        text-align: center;
+        box-sizing: border-box;
+        min-width: 0; /* Prevents overflow */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        word-wrap: break-word; /* Ensures long words break */
+        overflow-wrap: break-word; /* Modern standard for word breaking */
+        white-space: normal; /* Allows text to wrap naturally */
+
+        div {
+          margin-top: 2rem;
+          font-size: 0.8rem;
+          text-transform: none;
+          word-wrap: break-word; /* Wraps long email/URLs */
+          overflow-wrap: break-word;
+          white-space: normal; /* Ensures wrapping */
+          max-width: 100%; /* Constrains width to parent */
+        }
+
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .faq-container {
+    width: 80%;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .qa-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 2rem;
+    }
+
+    .flooding-faq,
+    .water-faq {
+      font-weight: 200;
+      font-size: 1.5rem;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+
+    .question-div {
+      font-weight: 300;
+      background-color: black;
+      color: white;
+      padding: 1.5rem 2rem;
+    }
+
+    .question-div {
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      background-color: #f2f1f1;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      border-radius: 2rem;
+      cursor: pointer;
+
+      .question-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+      }
+    }
+
+    .term-div {
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      background-color: #f2f1f1;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      border-radius: 2rem;
+      cursor: pointer;
+      padding-top: 1em;
+      padding-bottom: 0.25em;
+      text-decoration: none;
+
+      .term-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+      }
+    }
+
+    .term-source {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.5rem;
+    }
+
+    .term-div:hover {
+      font-size: 1.5rem;
+      background-color: black;
+      color: white;
+    }
+
+    .term-div a {
+      text-decoration: none;
+    }
+
+    .term-div a:hover {
+      text-decoration: underline;
+    }
+
+    .question-div.active {
+      background-color: black;
+      color: white;
+    }
+
+    .answer-div {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+        transform 0.3s ease-out;
+
+      color: white;
+      a {
+        color: white;
+      }
+      ul {
+        margin-bottom: 0;
+      }
+      div {
+        margin-bottom: 1rem;
+      }
+      div:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .answer-div.active {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: max-content;
+      text-transform: none;
+      text-align: left;
+      padding: 1rem 0;
+      width: 100%;
+    }
+  }
+
+  .further-faq-container {
+    width: 80%;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .contact {
+      font-weight: 200;
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 2rem 0;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+/* Medium screen */
+@media (max-width: 768px) {
+  .resources-container {
+    .banner {
+      width: 90%;
+
+      .disclaimer {
+        width: 90%;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+    .contact-container {
+      width: 85%;
+      gap: 0;
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+      }
+
+      .about-us {
+        font-size: 1rem;
+      }
+
+      .contact-info {
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+        padding: 1.5rem;
+        gap: 2rem;
+      }
+    }
+
+    .faq-container {
+      width: 90%;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .flooding-faq {
+        font-size: 1rem;
+        margin: 1rem 0;
+      }
+
+      .qa-container {
+        padding: 0.5rem;
+
+        .question-div {
+          font-size: 0.8rem;
+          border-radius: 2.5rem;
+          padding: 1.5rem;
+          .question-box {
+            gap: 1rem;
+          }
+        }
+      }
+    }
+
+    .further-faq-container {
+      width: 90%;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .contact {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+/* Small screen: 1 column */
+@media (max-width: 480px) {
+  .resources-container {
+    .contact-container {
+      .contact-info {
+        grid-template-columns: 1fr;
+        max-width: none;
+
+        .phone-number,
+        .email,
+        .address,
+        .website {
+          font-size: 1.4rem;
+          padding: 2rem 3rem;
+
+          div {
+            margin-top: 1.5rem;
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.imgBorder {
+  border-radius: 50%;
+  background-color: #214664;
+  margin: 0.25em;
+  border-width: 0em;
+  float: right;
+}

@@ -1,0 +1,162 @@
+/* General Styles */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 5px 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100000;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+/* Navbar Container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  width: auto; /* Keep the width auto */
+  height: 45px; /* Set the desired height */
+  max-height: 100px; /* Ensure the height is fixed, to avoid resizing the whole navbar */
+}
+
+.nav-icon {
+  font-size: 24px;
+  color: #000000;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link.active-link {
+  text-decoration: underline;
+}
+
+.nav-user-icon {
+  font-size: 24px;
+  color: #000000;
+  align-items: right;
+}
+
+/* Example CSS for ProfileDropdown */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.dropdown-menu .user-info p {
+  margin: 0 0 0.5rem;
+}
+
+.dropdown-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Hide mobile dropdown & icon by default */
+.mobile-only {
+  display: none;
+}
+
+.mobile-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 1rem;
+  z-index: 1001;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 0;
+  text-align: right;
+  color: black;
+  text-decoration: none;
+  font-weight: 200;
+  width: 100%;
+}
+
+
+.dropdown-link:hover {
+  color: #87c7ff;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .mobile-dropdown .profile-dropdown {
+    width: 100%;
+    text-align: right;
+  }
+  
+  .mobile-menu-icon {
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+}

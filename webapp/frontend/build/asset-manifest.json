@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54ad384d.css",
+    "main.js": "/static/js/main.a14a8066.js",
+    "static/media/resources.png": "/static/media/resources.68492a8efc3d4d454760.png",
+    "static/media/waterOnMyBlockConcentForm.pdf": "/static/media/waterOnMyBlockConcentForm.e3defbc19b07ce109f27.pdf",
+    "static/media/logo_low_quality2.png": "/static/media/logo_low_quality2.174ef8b6f50d7686427f.png",
+    "index.html": "/index.html",
+    "main.54ad384d.css.map": "/static/css/main.54ad384d.css.map",
+    "main.a14a8066.js.map": "/static/js/main.a14a8066.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54ad384d.css",
+    "static/js/main.a14a8066.js"
+  ]
+}

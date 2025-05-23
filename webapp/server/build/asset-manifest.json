@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ed33ab2b.css",
+    "main.js": "/static/js/main.af7788a4.js",
+    "static/media/pinpoint_icon.png": "/static/media/pinpoint_icon.d35019558325ee55fb13.png",
+    "index.html": "/index.html",
+    "main.ed33ab2b.css.map": "/static/css/main.ed33ab2b.css.map",
+    "main.af7788a4.js.map": "/static/js/main.af7788a4.js.map"
+  },
+  "entrypoints": ["static/css/main.ed33ab2b.css", "static/js/main.af7788a4.js"]
+}

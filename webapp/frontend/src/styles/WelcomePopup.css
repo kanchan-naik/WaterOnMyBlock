@@ -1,0 +1,150 @@
+.welcome-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  background: #ffffff;
+  text-align: center;
+  width: 25rem;
+  height: 23rem;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
+.welcome-popup-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 25rem;
+  height: 22rem;
+}
+
+.welcome-popup-title {
+  font-size: 2rem;
+  line-height: 1.66rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.welcome-popup-title span {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.welcome-popup-description {
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: lighter;
+}
+
+.welcome-popup-buttons {
+  z-index: 1002;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.welcome-button {
+  border: 1px solid black;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 21rem;
+  height: 2.5rem;
+  margin: 0.25rem;
+}
+
+.welcome-button:hover, .welcome-button:active {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.welcome-button span {
+  font-size: 0.75rem;
+}
+
+.close-button {
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media (max-width: 1200px) and (min-width: 601px){
+  .welcome-popup {
+    width:  450px;
+    height: 400px;
+  }
+  .welcome-popup-content {
+    width: 450px;
+    height: 450px;
+    display: inline-block;
+  }
+
+  .welcome-popup-title {
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-top: 50px;
+  } 
+  .welcome-popup-description {
+    font-size: 1.25rem;
+    line-height: 1rem;
+  }
+  
+  .welcome-popup-buttons {
+    z-index: 1002;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .welcome-button {
+    width: 400px;
+    height: 3rem;
+    margin: 5px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .welcome-popup {
+    width: 350px;
+    height: 300px;
+  }
+  .welcome-popup-content {
+    width: 350px;
+    height: 350px;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .welcome-popup-buttons {
+    z-index: 1002;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .welcome-popup-title {
+    font-size: 1.5rem;
+    line-height: 1.33rem;
+  }
+  .welcome-button {
+    width: 300px;
+    height: 2.5rem;
+    margin: 5px;
+  }
+}
