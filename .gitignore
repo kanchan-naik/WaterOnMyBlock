@@ -1,0 +1,14 @@
+# OS-specific
+.DS_Store
+
+# Node modules
+/webapp/server/node_modules/
+/webapp/frontend/node_modules/
+
+# Build output
+/webapp/server/build/
+/webapp/frontend/build/
+
+# Env files
+webapp/frontend/.env*
+webapp/server/.env

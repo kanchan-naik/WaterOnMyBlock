@@ -2,13 +2,10 @@
 .DS_Store
 
 # Node modules
-/webapp/server/node_modules/
-/webapp/frontend/node_modules/
+**/node_modules/
 
 # Build output
-/webapp/server/build/
-/webapp/frontend/build/
+**/build/
 
 # Env files
-webapp/frontend/.env*
-webapp/server/.env
+**/.env*
