@@ -1,3 +1,16 @@
+/**
+ * imageController.js
+ * -------------------
+ * Handles image upload, retrieval, and deletion for incidents.
+ * 
+ * - `uploadImage`: Saves a new image to the database and associates it with an incident.
+ * - `getImageById`: Returns image binary data by ID with appropriate content type.
+ * - `deleteImage`: Removes an image from the database by its ID.
+ * 
+ * Images are stored in MongoDB using a Mongoose `Image` model, with binary data
+ * saved in `data` and file type in `contentType`.
+ */
+
 const Image = require("../models/imageModel");
 
 /* Uploads an image and associates it with an incident */

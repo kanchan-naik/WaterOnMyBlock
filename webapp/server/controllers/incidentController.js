@@ -1,3 +1,20 @@
+/**
+ * incidentController.js
+ * ----------------------
+ * Handles all CRUD operations and business logic for flood incident annotations.
+ * Interfaces with the Incident Mongoose model to create, retrieve, update, delete, and upvote incident entries.
+ *
+ * - `createIncident`: Creates a new incident from form submission data, including image conversion and validation.
+ * - `getIncidents`: Returns all incident records from the database.
+ * - `getIncidentById`: Retrieves a single incident by its MongoDB ObjectId.
+ * - `updateIncident`: Updates a specific incident with new data.
+ * - `deleteIncident`: Removes an incident by ID.
+ * - `upvoteIncident`: Increments or decrements the upvote count based on user interaction.
+ *
+ * Images are expected in base64 format and converted to binary buffers before storage.
+ * `floodVisibility` and `imagePrivacy` fields are used to control public display.
+ */
+
 const Incident = require("../models/incidentModel");
 
 /* Creates an incident from data from the user's annotation form */
