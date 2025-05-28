@@ -6,13 +6,10 @@ if (process.env.NODE_ENV != "production") {
 // Import dependencies
 const express = require("express");
 const connectToDb = require("./config/connectToDb");
-const incidentController = require("./controllers/incidentController"); // Change to incidentController
-const usersController = require("./controllers/usersController");
+const incidentController = require("./controllers/incidentController"); 
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const requireAuth = require("./middleware/requireAuth");
 const path = require("path");
-const Image = require("./models/imageModel"); // Adjust the path if needed
 
 // CORS configuration
 const allowedOrigins = [
@@ -30,20 +27,20 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use(express.raw({ limit: "10mb" })); // If using raw body
 app.use(express.text({ limit: "10mb" })); // If using text
 
-// CORS configuration for production
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       // Allow requests with no origin (like mobile apps or Postman)
-//       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//     credentials: true, // Allow cookies to be sent with the request
-//   })
-// );
+/* CORS configuration for production
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or Postman)
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+      credentials: true, // Allow cookies to be sent with the request
+   })
+); */
 
 app.use(
   cors({
@@ -53,7 +50,7 @@ app.use(
       "http://wateronmyblock.com",
     ],
     credentials: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    methods: "GET,PUT,PATCH,POST,DELETE",
     allowedHeaders:
       "Origin, X-Requested-With, Content-Type, Accept, Authorization",
   })
@@ -66,30 +63,8 @@ app.use(cookieParser());
 // Connect to database
 connectToDb();
 
-// Routing
-
-/* User Authentication */
-app.post("/signup", (req, res, next) => {
-  console.log("POST /signup endpoint hit");
-  usersController.signup(req, res, next);
-});
-
-app.post("/login", (req, res, next) => {
-  console.log("POST /login endpoint hit");
-  usersController.login(req, res, next);
-});
-
-app.get("/logout", (req, res, next) => {
-  console.log("GET /logout endpoint hit");
-  usersController.logout(req, res, next);
-});
-
-app.get("/check-auth", (req, res, next) => {
-  console.log("GET /check-auth endpoint hit");
-  requireAuth(req, res, next, () => usersController.checkAuth(req, res));
-});
-
 /* Incident Stuff */
+
 // Get all incidents
 app.get("/incidents", (req, res, next) => {
   console.log("GET /incidents endpoint hit");
