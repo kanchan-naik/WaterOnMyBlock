@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
@@ -19,10 +20,14 @@ import "../styles/Map.css";
 import "../styles/AnnotationForm.css";
 import "leaflet/dist/leaflet.css";
 
-const GOOGLE_MAPS_API_KEY = "AIzaSyCI0smYjmcqFq4bP5BbFzRXW5SQJE0p_70";
-const ChathamChicagoLatLng = { lat: 41.7405, lng: -87.5997 };
-const MAPBOX_TOKEN =
-  "pk.eyJ1Ijoia2FuY2hhbjA4NyIsImEiOiJjbTY4Z3lydGEwY3lzMmxvbzU3MzF6MjJ1In0.Nr7URVeNOfQg3jRLYfurrA";
+const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
+
+const ChathamChicagoLatLng = {
+  lat: parseFloat(process.env.REACT_APP_CHATHAM_LAT),
+  lng: parseFloat(process.env.REACT_APP_CHATHAM_LNG),
+};
+
 const noise = Math.random() * 0.002; // long-term solution: persist this in the db instead of doing this here.
 
 // Custom hook to get current user
