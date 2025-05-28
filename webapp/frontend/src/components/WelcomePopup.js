@@ -1,3 +1,16 @@
+/**
+ * WelcomePopup.js
+ * ----------------
+ * A homepage popup that introduces users to the WaterOnMyBlock app.
+ * Offers three main actions: "Learn More", "Take a Tour", and "Report a Flood".
+ * 
+ * - If the user clicks "Learn More", they're redirected to the Resources page.
+ * - If they click "Take a Tour", an interactive TourPopup is displayed.
+ * - "Report a Flood" checks auth status and either prompts sign-in or opens the form.
+ *
+ * This component appears on initial load and can be dismissed via the "x" button.
+ */
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";

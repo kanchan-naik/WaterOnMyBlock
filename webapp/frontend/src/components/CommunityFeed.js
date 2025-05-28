@@ -95,7 +95,6 @@ function CommunityFeedPC({
               title={
                 "" + feed.propertyType + " flooding at " + feed.floodAddress
               }
-              // profileImg={feed.profileImg}
               images={feed.images}
               numUpvotes={feed.numUpvotes}
               timestamp={feed.timestamp}
@@ -116,7 +115,6 @@ function CommunityFeedPC({
 
 function FeedItemPC({
   title,
-  // profileImg,
   images = [],
   numUpvotes,
   timestamp,
@@ -136,18 +134,6 @@ function FeedItemPC({
       onClick={onClick}>
       <div className="user-info">
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-          {/* profileImg ? (
-            <img src={profileImg} alt="profile-pic" />
-          ) : (
-            <div
-              style={{
-                width: "1.563rem",
-                height: "1.563rem",
-                borderRadius: "50%",
-                backgroundColor: "#ccc",
-              }}
-            />
-          )*/}
           <span className="feed-item-title">{title}</span>
         </div>
         <InteractionButton
@@ -235,7 +221,6 @@ function CommunityFeedMobile({
                 title={
                   "" + feed.propertyType + " flooding at " + feed.floodAddress
                 }
-                //profileImg={feed.profileImg}
                 images={feed.images}
                 numUpvotes={feed.numUpvotes}
                 timestamp={feed.timestamp}
@@ -259,7 +244,6 @@ function CommunityFeedMobile({
 
 function FeedItemMobile({
   title,
-  //profileImg,
   images = [],
   numUpvotes,
   timestamp,
@@ -279,18 +263,6 @@ function FeedItemMobile({
       onClick={onClick}>
       <div className="user-info">
         <div style={{ display: "flex", alignItems: "center", gap: ".5rem" }}>
-          {/*profileImg ? (
-            <img src={profileImg} alt="profile-pic" />
-          ) : (
-            <div
-              style={{
-                width: "1.563rem",
-                height: "1.563rem",
-                borderRadius: "50%",
-                backgroundColor: "#ccc",
-              }}
-            />
-          )*/}
           <span className="feed-item-title">{title}</span>
         </div>
         <InteractionButton

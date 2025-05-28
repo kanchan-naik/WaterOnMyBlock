@@ -1,3 +1,14 @@
+/**
+ * TourPopup.js
+ * -------------
+ * A modal popup that plays an embedded YouTube video to guide new users
+ * through the features of the WaterOnMyBlock application.
+ *
+ * Triggered from the WelcomePopup component when "Take a Tour" is clicked.
+ * Includes a "Return to Map" button that closes the popup.
+ *
+ */
+
 import React, { useState } from "react";
 import "../styles/WelcomePopup.css";
 
