@@ -501,13 +501,14 @@ function Map() {
   const handleAnnotationSubmit = async (data) => {
     console.log("Annotation Submitted:", data);
     if (selectedMarker) {
-      const formattedEntry = {
-        annotationId: data.annotationId,
-        images: data.images?.map((image) => image.src) || [],
-        numUpvotes: 0,
-        timestamp: new Date().toLocaleString("en-US", {
-          timeZone: "America/Chicago",
-        }),
+      if (selectedMarker && data.floodVisibility !== "Hide") {
+        const formattedEntry = {
+          annotationId: data.annotationId,
+          images: data.images?.map((image) => image.src) || [],
+          numUpvotes: 0,
+          timestamp: new Date().toLocaleString("en-US", {
+            timeZone: "America/Chicago",
+          }),
       };
 
       // Add new entry to feedData
@@ -517,6 +518,7 @@ function Map() {
           (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
         );
       });
+    }
 
       // Refresh the markers and feed data after submission
       await refreshData();

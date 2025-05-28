@@ -174,9 +174,9 @@ function AnnotationForm({ onSubmit, initialData, onClose, lat, lng }) {
       floodVisibility,
       waterCleanliness,
       propertyType,
-      imagePrivacy,
       otherFloodCause: waterCause === "Other" ? otherFloodCause : "",
       otherFloodLocation: floodLocation === "Other" ? otherFloodLocation : "",
+      ...(imagePrivacy ? { imagePrivacy } : {})
     };
 
     const generateEmailBody = () => {
