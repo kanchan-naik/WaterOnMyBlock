@@ -167,6 +167,41 @@ REACT_APP_AUTH0_DOMAIN=your_auth0_domain
 REACT_APP_AUTH0_CLIENT_ID=your_auth0_client_id
 ```
 
+#### 🔍 How to View Incident Data in MongoDB Atlas
+To inspect the flood incident data stored in MongoDB:
+
+Log in to MongoDB Atlas
+Visit https://cloud.mongodb.com and log in with the appropriate project credentials.
+
+Select the Correct Project
+In the dashboard, switch to the project with ID: 6796c9aa6121847ae5fe4102.
+The project is named FloodWatch.
+
+<img width="1456" alt="Screenshot 2025-05-30 at 1 27 09 PM" src="https://github.com/user-attachments/assets/b61787d1-391e-4d65-95ef-fd1e6cb7b471" />
+
+Open the ChathamCluster
+Navigate to the Clusters section in the left-hand sidebar.
+Click on the cluster named ChathamCluster to open the cluster overview.
+
+Access the Database
+From the cluster dashboard, click the Browse Collections button.
+<img width="1466" alt="Screenshot 2025-05-30 at 1 24 52 PM" src="https://github.com/user-attachments/assets/275707c1-f4e9-4c77-9452-eb126a3a37dc" />
+
+Locate the `incidents` Collection. The name of the actual database is `test`'. 
+
+Click into that database and then select the `incidents` collection.
+<img width="1470" alt="Screenshot 2025-05-30 at 1 25 53 PM" src="https://github.com/user-attachments/assets/2c1c0ec2-0c1e-4aef-a3c1-3ffe3b060954" />
+
+This will show all submitted flood reports, including fields like description, location, floodVisibility, imagePrivacy, and uploaded image metadata.
+<img width="1469" alt="Screenshot 2025-05-30 at 1 26 16 PM" src="https://github.com/user-attachments/assets/4007f8d2-5c55-4e22-aff4-775693a5dcd0" />
+
+Filter or Query (Optional):
+Use the built-in MongoDB query bar to filter for specific fields. For example:
+
+`{ "floodVisibility": { "$ne": "Hide" } }`. 
+<img width="973" alt="Screenshot 2025-05-30 at 1 26 52 PM" src="https://github.com/user-attachments/assets/86227ab2-b43b-46b7-956b-595ca5511df4" />
+
+
 Thank you for contributing to a more flood-resilient Chatham. 💧
 
 
