@@ -1,3 +1,17 @@
+/**
+ * AboutUs.js
+ * -----------
+ * Static informational page providing background. 
+ * 
+ * Includes:
+ * - Project overview and mission
+ * - Initial launch period details and citizen science collaboration
+ * - Feedback form link for user input
+ * - Embedded consent form PDF for research participation transparency
+ * 
+ * Used as a top-level route accessible from the main navigation bar.
+ */
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/AboutUs.css";

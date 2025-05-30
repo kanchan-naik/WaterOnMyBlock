@@ -1,4 +1,25 @@
 
+/**
+ * 
+ * Map.js
+ * -------
+ * Core interactive map component for Water On My Block.
+ *
+ * Features:
+ * - Displays reported flood incidents as markers using Leaflet
+ * - Allows users to place new markers to submit flood annotations
+ * - Supports conditional rendering based on authentication state
+ * - Dynamically fetches and filters incident data based on visibility and image privacy
+ * - Manages bottom sheets (popups), mobile responsiveness, and fly-to animations
+ *
+ * Coordinates with:
+ * - AnnotationForm (for new report submission)
+ * - CommunityFeed (for listing incidents)
+ * - Firebase Auth (for user state)
+ *
+ * 
+ */
+
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
