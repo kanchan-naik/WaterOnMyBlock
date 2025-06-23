@@ -118,22 +118,54 @@ npm install
 ```
 
 ### 3. Set up environment variables
-Create a .env file in both frontend/ and server/ directories.
+You'll need to configure both the frontend and server with appropriate environment variables. Create a .env file in both frontend/ and server/ directories.
 
-In /frontend/.env:
+🖥️ In /frontend/.env.local (Development Environment):
 ```
-REACT_APP_BACKEND_URL = http://localhost:8080
+REACT_APP_BASE_URL=http://localhost:8080
+
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+REACT_APP_MAPBOX_TOKEN=your_mapbox_token
+
+REACT_APP_AUTH0_DOMAIN=your_auth0_domain
+REACT_APP_AUTH0_CLIENT_ID=your_auth0_client_id
+
+REACT_APP_CHATHAM_LAT=41.7405
+REACT_APP_CHATHAM_LNG=-87.5997
 ```
 
-In /server/.env:
+🚀 In /frontend/.env.production (Production Deployment):
+```
+REACT_APP_BASE_URL=http://your_production_backend_url
+
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+REACT_APP_MAPBOX_TOKEN=your_mapbox_token
+
+REACT_APP_AUTH0_DOMAIN=your_auth0_domain
+REACT_APP_AUTH0_CLIENT_ID=your_auth0_client_id
+
+REACT_APP_CHATHAM_LAT=41.7405
+REACT_APP_CHATHAM_LNG=-87.5997
+```
+
+🔧 In /server/.env:
 
 ```
-MONGO_URI=your_mongodb_connection_string
 PORT=8080
+DB_URL=your_mongodb_connection_string
+SECRET=your_jwt_secret_key
+
+REACT_APP_AUTH0_DOMAIN=your_auth0_domain
+REACT_APP_AUTH0_CLIENT_ID=your_auth0_client_id
 ```
-
-Thank you for contributing to a more flood-resilient Chatham. 💧
-
 
 
 
