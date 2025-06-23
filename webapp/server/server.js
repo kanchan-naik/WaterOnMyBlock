@@ -42,17 +42,31 @@ app.use(
    })
 ); */
 
+const isDev = process.env.NODE_ENV !== "production";
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000", // Local frontend
-      "http://ec2-23-22-165-228.compute-1.amazonaws.com", // Production frontend
-      "http://wateronmyblock.com",
-    ],
+    origin: (origin, callback) => {
+      if (
+        isDev &&
+        origin &&
+        origin.startsWith("http://localhost")
+      ) {
+        return callback(null, true);
+      }
+
+      const allowedOrigins = [
+        "http://ec2-23-22-165-228.compute-1.amazonaws.com",
+        "http://wateronmyblock.com",
+      ];
+
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
-    methods: "GET,PUT,PATCH,POST,DELETE",
-    allowedHeaders:
-      "Origin, X-Requested-With, Content-Type, Accept, Authorization",
   })
 );
 
